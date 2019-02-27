@@ -8,7 +8,22 @@ const indexRouter = require('./routes/index');
 const session = require("express-session");
 const cors = require('cors');
 const app = express();
+const mongoose = require('mongoose');
 require('./config-passport');
+
+let environment = app.get('env')
+
+if (environment === 'test') {
+  mongoose.connect('mongodb://localhost/zzz');
+} else {
+  mongoose.connect('mongodb://localhost/test');
+}
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('Connected')
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
