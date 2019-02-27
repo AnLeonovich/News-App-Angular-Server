@@ -9,6 +9,26 @@ let id;
 
 describe("Server", () => {
 
+  it("should post an article", (done) => {
+    chai.request(app)
+      .post('/news')
+      .type('form')
+      .send({
+        "title": 'test',
+        "description": 'test',
+        "content": 'test',
+        "urlToImage": 'test',
+        "publishedAt": null,
+        "author": 'test',
+        "url": 'test',
+        "imageType": 'test'
+      })
+      .end((err, res) => {
+        res.should.have.status(200);
+        done();
+      });
+  });
+
   it("should get all news", (done) => {
     chai.request(app)
      .get('/')
@@ -27,26 +47,6 @@ describe("Server", () => {
         res.should.have.status(200);
         res.body.should.be.a('object');
         res.body._id.should.be.equal(id)
-        done();
-      });
-  });
-
-  it("should post an article", (done) => {
-    chai.request(app)
-      .post('/news')
-      .type('form')
-      .send({
-        "title": 'test',
-        "description": 'test',
-        "content": 'test',
-        "urlToImage": 'test',
-        "publishedAt": null,
-        "author": 'test',
-        "url": 'test',
-        "imageType": 'test'
-      })
-      .end((err, res) => {
-        res.should.have.status(200);
         done();
       });
   });
