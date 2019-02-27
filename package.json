@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
     "start:debugger": "nodemon --inspect ./bin/www",
-    "test": "set NODE_ENV=test && nyc mocha test/*.js --exit"
+    "test": "set NODE_ENV=test && nyc mocha --timeout 10000 test/*.js --exit"
   },
   "dependencies": {
     "chai": "^4.2.0",

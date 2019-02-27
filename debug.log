@@ -666,3 +666,17 @@
 {"message":"GET request with ID","level":"info"}
 {"message":"PUT request","level":"info"}
 {"message":"DELETE request","level":"info"}
+{"message":"POST request","level":"info"}
+{"message":"GET request","level":"info"}
+{"message":"GET request with ID","level":"info"}
+{"message":"PUT request","level":"info"}
+{"message":"DELETE request","level":"info"}
+{"message":"POST request","level":"info"}
+{"message":"GET request with ID","level":"info"}
+{"message":"PUT request","level":"info"}
+{"message":"DELETE request","level":"info"}
+{"message":"POST request","level":"info"}
+{"message":"GET request","level":"info"}
+{"message":"GET request with ID","level":"info"}
+{"message":"PUT request","level":"info"}
+{"message":"DELETE request","level":"info"}
