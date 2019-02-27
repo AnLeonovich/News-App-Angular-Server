@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const passport = require('passport');
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 const session = require("express-session");
 const cors = require('cors');
 const app = express();
@@ -48,7 +47,6 @@ app.use(function (req, res, next) {
 
 
 app.use('/', indexRouter);
-app.use('/', usersRouter);
 app.use(cors());
 /*
 */
